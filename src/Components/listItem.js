@@ -11,9 +11,7 @@ const ListItem = (props) => {
     const elementToRender=isChecked? <div>
                 <input className="form-check-input" type="checkbox" onClick={()=>toggleCheckBox(!isChecked)}/>
                 <label className="form-check-label"> <s>{listItem}</s></label>
-                <button className="mx-2 btn btn-outline-danger btn-sm" 
-                onClick={deleteItem}
-                type="button"><BsTrash/></button>
+                <BsTrash className="mx-2 icon" onClick={deleteItem} color="red" size="20px"/>
                 </div>
                 :<div>
                 <input className="form-check-input" type="checkbox" onClick={()=>toggleCheckBox(!isChecked)}/>

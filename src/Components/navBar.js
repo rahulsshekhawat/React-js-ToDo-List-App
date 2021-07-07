@@ -1,8 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 import {HiHome} from "react-icons/hi";
 
-const NavBar = (props) => {
-    const [listName,setListName]=useState("");
+const NavBar = () => {
     return (
         <div>
             <nav className="navbar navbar-dark bg-primary">

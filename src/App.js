@@ -44,14 +44,6 @@ const App = () => {
             updateList([...tempList]);
         }
 
-        var getListToSearch=(listNameToSearch)=>{
-           const tempList=myLists.filter((listItem)=>{
-                if(listItem.listName===listNameToSearch)
-                    return listItem;
-            });
-            console.log(tempList);
-        }
-
         var listArray = myLists.map((listObj, listIndex) => {
             return (<List key={uuid()} getListElements={getListElements} 
             getListToDelete={getListToDelete} 
@@ -68,7 +60,7 @@ const App = () => {
 
     return (
         <div>
-            <NavBar listCount={myLists.length} getListToSearch={getListToSearch}/>
+            <NavBar listCount={myLists.length}/>
             <AddList getListName={getListName} />
             {<div className="row container-fluid mx-3">{listArray}</div>}
         </div>

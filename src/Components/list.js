@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import {VscDiffAdded} from "react-icons/vsc";
 import {uuid } from "uuidv4";
 import ListItem from "./listItem";
 
