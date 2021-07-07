@@ -1,7 +1,10 @@
 import React,{useState} from "react";
+import {toast} from "react-toastify";
 import {uuid } from "uuidv4";
 import ListItem from "./listItem";
 
+
+toast.configure();
 const List = (props) => {
     const [value, setValue]=useState("");
     const listIndex=props.id;
@@ -10,7 +13,7 @@ const List = (props) => {
 
     const updateList=(e)=>{
         if(value==="")
-            alert("Item name can't be empty.");
+            toast.warn("Item name can't be empty");
         else{
             props.getListElements(value,listIndex);
             setValue("");

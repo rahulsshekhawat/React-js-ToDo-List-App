@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
+import {toast} from "react-toastify";
+import "../node_modules/react-toastify/dist/ReactToastify.css";
 import {uuid} from "uuidv4";
 import NavBar from "./Components/navBar";
 import AddList from "./Components/addList"
 import List from "./Components/list"
 
+toast.configure();
 const App = () => {
     const [myLists, updateList] = useState([]);
     const localStorageId="myListsId";
 
     const getListName = (name) => {
         if(name===""){
-            alert("List name can't be empty.");
+            toast.warn("List name can't be empty");
         }
         else if(name!==null){
             updateList([...myLists, { listName: name,list:[] }]);
