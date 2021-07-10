@@ -16,7 +16,8 @@ const App = () => {
             toast.warn("List name can't be empty");
         }
         else if(name!==null){
-            updateList([...myLists, { listName: name,list:[] }]);
+            const dateStr="Created on "+ new Date().toDateString();
+            updateList([...myLists, { date:dateStr,listName: name,list:[] }]);
         }    
     }
 

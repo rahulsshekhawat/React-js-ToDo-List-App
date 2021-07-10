@@ -8,7 +8,7 @@ toast.configure();
 const List = (props) => {
     const [value, setValue]=useState("");
     const listIndex=props.id;
-    const {listName,list:items}=props.content;
+    const {date,listName,list:items}=props.content;
 
 
     const updateList=(e)=>{
@@ -33,9 +33,12 @@ const List = (props) => {
     });
 
     return (
-        <div className="card my-3 mx-3 bg-light" style={{ width: "18rem" }}>
+        <div className="card my-3 mx-3 bg-light" style={{ width: "20rem" }}>
             <div className="card-body">
-                <h5 className="card-title">{listName}</h5>
+                <div className="card-title d-flex" style={{width:"300px"}}>
+                    <h5 className="card-title mx-2">{listName}</h5>
+                    <p className="card-text mx-2" style={{marginRight:"5px",marginTop:"5px", fontSize:"10px"}}>{date}</p>
+                </div>
                 <div className="input-group mb-3">
                     <input type="text" className="form-control" 
                     value={value}
